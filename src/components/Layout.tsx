@@ -6,32 +6,32 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      <header className="bg-[#8C1515] text-white shadow-lg">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row items-center justify-center">
+    <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+      <header className="bg-[#8C1515] text-white shadow-md">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-center py-5">
             <div className="flex items-center">
               <img 
-                src="https://www.gsb.stanford.edu/sites/default/files/stanford-gsb-logo-rev.svg" 
+                src="src/assets/StanfordGSB_SmallLogo.jpg" 
                 alt="Stanford GSB Logo" 
-                className="h-8 md:h-10 mr-4"
+                className="h-10 md:h-12 mr-4"
               />
               <div>
-                <h1 className="text-xl md:text-2xl font-serif font-medium tracking-wide">Rosewood MSx '25: Finale</h1>
-                <p className="text-xs md:text-sm opacity-90 tracking-wide">Arrival Shuttle Service</p>
+                <h1 className="text-2xl md:text-3xl font-serif font-semibold tracking-tight">Rosewood MSx '25 Finale</h1>
+                <p className="text-sm md:text-base opacity-80 tracking-wide">Shuttle Planner</p>
               </div>
             </div>
           </div>
         </div>
       </header>
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 md:pt-6 md:pb-12 flex-grow">
         {children}
       </main>
       
       <footer className="bg-gray-100 border-t border-gray-200 py-4">
-        <div className="container mx-auto px-4 text-center text-gray-600 text-sm">
-          <p>Shuttle will continue to run from Rosewood to GSB pickup until 9pm</p>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm">
+          <p>&copy;Stanford GSB MSx Class of 2025. The Best Ever.</p>
         </div>
       </footer>
     </div>

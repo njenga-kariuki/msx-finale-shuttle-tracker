@@ -4,11 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="https://www.gsb.stanford.edu/sites/default/files/stanford-gsb-favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rosewood MSx '25: Finale</title>
+    <title>Shuttle Tracker</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
   </head>
   <body>
+    <!-- 
+      ==========================================================================
+      SHUTTLE TRACKER FAB - HIDDEN (AWAITING URL)
+      ==========================================================================
+      To activate the Floating Action Button (FAB) for shuttle tracking:
+      1. UNCOMMENT the entire block of HTML code below (from "START FAB" to "END FAB").
+      2. In script.js, find the line: let SHUTTLE_TRACKER_URL = null;
+      3. Replace `null` with your actual shuttle tracker URL in quotes, for example:
+         let SHUTTLE_TRACKER_URL = "https://your-tracker-link.com";
+      The button will then become visible and functional.
+      ==========================================================================
+    -->
+    <!-- START FAB
+    <button id="shuttleTrackerBtn" class="shuttle-tracker-fab" data-status="inactive" aria-label="Track shuttle location (coming soon)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6z"></path>
+        <circle cx="12" cy="8" r="2"></circle>
+      </svg>
+    </button>
+
+    <div id="shuttleTrackerTooltip" class="shuttle-tracker-tooltip" role="tooltip">
+      Shuttle tracking will be available soon!
+    </div>
+
+    <div id="shuttleStatusSR" class="sr-only" aria-live="polite"></div>
+    END FAB -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="script.js"></script>
   </body>
 </html>
