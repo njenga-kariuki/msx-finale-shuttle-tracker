@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useShuttle } from '../context/ShuttleContext';
 import ShuttleCard from './ShuttleCard';
 import RegistrationForm from './RegistrationForm';
@@ -14,6 +14,15 @@ interface EditingRegistrationInfo {
 
 const ShuttleRegistration: React.FC = () => {
   const { shuttles, removeRegistration, updateRegistration } = useShuttle();
+
+  // Log shuttles data when it changes or on render
+  useEffect(() => {
+    console.log('[ShuttleRegistration] Shuttles received from context (useEffect):', JSON.parse(JSON.stringify(shuttles)));
+    if (shuttles && shuttles.length > 0) {
+      console.log('[ShuttleRegistration] Details of first shuttle:', JSON.parse(JSON.stringify(shuttles[0])));
+    }
+  }, [shuttles]);
+
   const [selectedShuttleId, setSelectedShuttleId] = useState<string | null>(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState<{shuttleId: string, registrationId: string} | null>(null);
   const [registrationsExpanded, setRegistrationsExpanded] = useState(false);
