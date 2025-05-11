@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import ShuttleRegistration from './components/ShuttleRegistration';
 import AdminView from './components/AdminView';
 import MenuView from './components/MenuView';
+import DJRequestsView from './components/DJRequestsView';
 
 const ADMIN_HASH = '#/admin-shuttle-view';
 
@@ -15,7 +16,7 @@ function App() {
   // console.log('[App.tsx] Initial showAdminView state:', window.location.hash === ADMIN_HASH);
 
   // Set default activeView to 'register' (Shuttle Planner)
-  const [activeView, setActiveView] = useState<'register' | 'menu'>('register');
+  const [activeView, setActiveView] = useState<'register' | 'menu' | 'djRequests'>('register');
 
   useEffect(() => {
     // console.log('[App.tsx] useEffect triggered. Adding hashchange listener.');
@@ -31,7 +32,7 @@ function App() {
       } else {
         // If not admin, and current activeView is not a valid tab, default to 'register'
         // This handles cases where hash might change to something unexpected non-admin.
-        if (activeView !== 'register' && activeView !== 'menu') {
+        if (activeView !== 'register' && activeView !== 'menu' && activeView !== 'djRequests') {
           // setActiveView('register'); // Already handled by initial state and layout interactions
         }
       }
@@ -55,6 +56,9 @@ function App() {
     }
     if (activeView === 'menu') {
       return <MenuView />;
+    }
+    if (activeView === 'djRequests') {
+      return <DJRequestsView />;
     }
     // Default to ShuttleRegistration (which is the 'register' view)
     return <ShuttleRegistration />;

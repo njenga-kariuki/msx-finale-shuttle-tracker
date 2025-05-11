@@ -39,6 +39,7 @@ const MenuView: React.FC = () => {
               { icon: Camera, text: 'Dress to impress for our photographer (first 3 hours). Glam shots, candids, class pics!' },
               { icon: Music4, text: 'Bring your light dancing vibes! Awesome DJ (#1 in Yelp Bay Area) knows GSB events.' },
               { icon: Bus, text: <>Plan to arrive by <strong style={{ color: GSB_RED, fontWeight: '600' }}>6 PM latest</strong>. Shuttle details on the "Shuttle Planner" tab.</> },
+              { icon: Bus, text: <>Friendly note: The shuttle will also operate on an ad-hoc basis between 5:30 PM and 9:00 PM for flexible arrivals or departures.</> },
             ].map((item, index) => (
               <li key={index} className="flex items-start">
                 <item.icon className="mr-3 h-5 w-5 flex-shrink-0 mt-1" style={{ color: GSB_RED }} />

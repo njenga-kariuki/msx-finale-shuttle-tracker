@@ -9,8 +9,8 @@ const GOLD_ACCENT = '#B08D57'; // Muted gold for active tab accent
 
 interface LayoutProps {
   children: React.ReactNode;
-  activeView: 'register' | 'menu';
-  setActiveView: (view: 'register' | 'menu') => void;
+  activeView: 'register' | 'menu' | 'djRequests';
+  setActiveView: (view: 'register' | 'menu' | 'djRequests') => void;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) => {
@@ -51,6 +51,12 @@ const Layout: React.FC<LayoutProps> = ({ children, activeView, setActiveView }) 
               className={`${navButtonBaseStyle} ${activeView === 'register' ? activeStyle : inactiveStyle}`}
             >
               <span>SHUTTLE PLANNER</span>
+            </button>
+            <button 
+              onClick={() => setActiveView('djRequests')}
+              className={`${navButtonBaseStyle} ${activeView === 'djRequests' ? activeStyle : inactiveStyle}`}
+            >
+              <span>DJ REQUESTS</span>
             </button>
           </nav>
         </div>
