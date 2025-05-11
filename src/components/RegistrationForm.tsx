@@ -61,7 +61,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ shuttleId, onCancel
         onClick={onCancel}
         className="flex items-center text-sm text-gray-600 hover:text-[#8C1515] mb-6 font-medium group"
       >
-        <ArrowLeft className="w-4 h-4 mr-1.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
+        <ArrowLeft className="w-5 h-5 mr-1.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
         Back to shuttle selection
       </button>
       

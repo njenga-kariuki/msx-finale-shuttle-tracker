@@ -35,13 +35,13 @@ const ShuttleCard: React.FC<ShuttleCardProps> = ({ shuttle, onClick }) => {
         {/* Row 1: Time & Select CTA / Full Message */} 
         <div className="flex justify-between items-center mb-2">
           <div className="flex items-center min-w-0"> {/* min-w-0 for long shuttle times */} 
-            <Clock className="w-4 h-4 text-[#8C1515] mr-2 flex-shrink-0" />
+            <Clock className="w-5 h-5 text-[#8C1515] mr-2 flex-shrink-0" />
             <h3 className="text-base font-serif font-semibold text-gray-800 truncate" title={shuttle.time}>{shuttle.time}</h3>
           </div>
           {!isFull ? (
             <div className="flex items-center text-sm text-[#8C1515] font-medium group-hover:text-[#6F0000] flex-shrink-0 ml-2">
               <span>Select</span>
-              <ChevronRight className="w-4 h-4 ml-0.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ChevronRight className="w-5 h-5 ml-0.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </div>
           ) : (
             <div className="text-sm text-red-600 font-semibold flex-shrink-0 ml-2">

@@ -201,17 +201,17 @@ const ShuttleRegistration: React.FC = () => {
                                   </div>
                                   <button
                                     onClick={() => handleEditClick(shuttle.id, registration)}
-                                    className="text-gray-400 hover:text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity p-1 rounded-md hover:bg-blue-50 flex-shrink-0"
+                                    className="text-gray-400 hover:text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity p-2 rounded-md hover:bg-blue-50 flex-shrink-0"
                                     title="Edit registration"
                                   >
-                                    <Edit3 className="w-4 h-4" />
+                                    <Edit3 className="w-5 h-5" />
                                   </button>
                                   <button
                                     onClick={() => handleDeleteClick(shuttle.id, registration.id)}
-                                    className="text-gray-400 hover:text-red-600 opacity-50 group-hover:opacity-100 transition-opacity p-1 rounded-md hover:bg-red-50 flex-shrink-0"
+                                    className="text-gray-400 hover:text-red-600 opacity-50 group-hover:opacity-100 transition-opacity p-2 rounded-md hover:bg-red-50 flex-shrink-0"
                                     title="Remove registration"
                                   >
-                                    <Trash2 className="w-4 h-4" />
+                                    <Trash2 className="w-5 h-5" />
                                   </button>
                                 </div>
                               </li>
