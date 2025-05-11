@@ -19,3 +19,16 @@ if (!supabaseAnonKey) {
 
 // Ensure createClient is called with strings, even if they are empty due to missing env vars (warnings above will have fired)
 export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
+
+// Test the connection
+supabase
+  .from('shuttles')
+  .select('*')
+  .limit(1)
+  .then(({ data, error }) => {
+    if (error) {
+      console.error('Supabase connection error:', error.message);
+    } else {
+      console.log('Supabase connected successfully!');
+    }
+  });
