@@ -22,7 +22,8 @@ export const ShuttleProvider: React.FC<{ children: React.ReactNode }> = ({ child
       console.log('[ShuttleContext] Fetching shuttle definitions...');
       const { data: shuttleDefinitions, error: shuttleError } = await supabase
         .from('shuttles') // Make sure your table is named 'shuttles'
-        .select('id, time, type');
+        .select('id, time, type')
+        .order('time', { ascending: true });
 
       console.log('[ShuttleContext] Shuttle definitions raw data:', shuttleDefinitions);
       console.error('[ShuttleContext] Shuttle definitions error:', shuttleError);

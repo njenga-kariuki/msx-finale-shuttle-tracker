@@ -48,7 +48,29 @@ const AdminView: React.FC = () => {
           };
         });
         
-        console.log('[AdminView] Combined registration info:', combinedInfo);
+        // Sort combinedInfo by shuttleTime
+        combinedInfo.sort((a, b) => {
+          // Helper to convert time string "HH:MM AM/PM" to minutes since midnight
+          const timeToMinutes = (timeStr: string): number => {
+            const [time, modifier] = timeStr.split(' ');
+            let [hours, minutes] = time.split(':').map(Number);
+
+            if (modifier && modifier.toUpperCase() === 'PM' && hours < 12) {
+              hours += 12;
+            }
+            if (modifier && modifier.toUpperCase() === 'AM' && hours === 12) { // Midnight case
+              hours = 0;
+            }
+            return hours * 60 + minutes;
+          };
+
+          const timeA = timeToMinutes(a.shuttleTime);
+          const timeB = timeToMinutes(b.shuttleTime);
+
+          return timeA - timeB;
+        });
+        
+        console.log('[AdminView] Combined registration info (sorted by shuttle time):', combinedInfo);
         setAllRegistrationsInfo(combinedInfo);
 
       } catch (err: any) {
