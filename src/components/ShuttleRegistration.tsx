@@ -67,7 +67,7 @@ const ShuttleRegistration: React.FC = () => {
 
     const selectedShuttle = shuttles.find(s => s.id === shuttleId);
     if (selectedShuttle) {
-      const capacity = 18; // Assuming capacity is 18, consistent with RegistrationForm & ShuttleCard
+      const capacity = 28; // Assuming capacity is 28, consistent with RegistrationForm & ShuttleCard
       // Calculate current passengers on this shuttle, EXCLUDING the one being edited, then add the new count for this registration.
       const otherRegistrationsPassengers = selectedShuttle.registrations
         .filter(reg => reg.id !== registrationId)

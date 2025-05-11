@@ -20,7 +20,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ shuttleId, onCancel
     
     if (name.trim() && selectedShuttle) {
       const totalCurrentPassengers = selectedShuttle.registrations.reduce((sum, reg) => sum + reg.guests + 1, 0);
-      const capacity = 18; // Assuming capacity is 18, match ShuttleCard
+      const capacity = 28; // Assuming capacity is 28, match ShuttleCard
       if (totalCurrentPassengers + guests + 1 > capacity) {
         alert(`Registering ${guests + 1} passenger(s) would exceed the shuttle capacity of ${capacity}. Please select fewer guests or a different shuttle.`);
         return;

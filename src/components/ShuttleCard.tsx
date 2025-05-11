@@ -13,7 +13,7 @@ const ShuttleCard: React.FC<ShuttleCardProps> = ({ shuttle, onClick }) => {
     0
   );
   
-  const capacity = 18;
+  const capacity = 28;
   const percentFull = (totalPassengers / capacity) * 100;
   const isFull = totalPassengers >= capacity;
   
